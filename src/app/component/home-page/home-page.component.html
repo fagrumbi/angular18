@@ -1,0 +1,120 @@
+<div class="main-header">
+
+    <div class="container mx-auto px-4 py-4 bg-blue-200 flex justify-between items-center">
+        <div class="text-2xl font-bold text-blue-600">PANKAJ</div>
+        <nav class="hidden md:flex space-x-8">
+          <a href="#account" (click)="setActive('account')" class="text-gray-700 hover:text-blue-600">
+            Account List
+          </a>
+         
+          <a href="#create-account" (click)="setActive('create-account')"  class="text-gray-700 hover:text-blue-600">
+            Create Account
+          </a>
+
+        </nav>
+        <div class="md:hidden">
+          <button class="text-gray-700 focus:outline-none">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M3 5h14a1 1 0 010 2H3a1 1 0 110-2zm0 4h14a1 1 0 010 2H3a1 1 0 110-2zm0 4h14a1 1 0 010 2H3a1 1 0 110-2z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+
+    <section class="py-4">
+      <h2 class="text-3xl font-bold text-center mb-8">BANKING APPLICATION</h2>
+      <div id="account">
+        <account-list></account-list>
+      </div>
+      <div id="create-account">
+        <app-create-account></app-create-account>
+      </div>
+    </section> 
+  </div> 
+
+
+ 
+  <!-- <div class="main-header">
+    <div class="container mx-auto px-4 py-4 bg-blue-200 flex justify-between items-center">
+      <div class="text-2xl font-bold text-blue-600">PANKAJ</div>
+      <nav class="hidden md:flex space-x-8">
+        <a href="#" (click)="setActive('account')" class="text-gray-700 hover:text-blue-600">
+          Account List
+        </a>
+        <a href="#" (click)="setActive('create-account')" class="text-gray-700 hover:text-blue-600">
+          Create Account
+        </a>
+      </nav>
+    </div>
+  
+    <section class="py-4">
+      <h2 class="text-3xl font-bold text-center mb-8">BANKING APPLICATION</h2>
+  
+      <div *ngIf="activeSection === 'account'">
+        <account-list></account-list>
+      </div>
+      
+      <div *ngIf="activeSection === 'create-account'">
+        <app-create-account></app-create-account>
+      </div>
+    </section>
+  </div> 
+    
+  <footer class="bg-gray-900 text-gray-200 py-8">
+    <div class="container mx-auto px-4 text-center">
+      <p class="mb-4">&copy; 2024 BankingPro. All rights reserved.</p>
+      <div class="space-x-4">
+        <a href="#" class="hover:text-blue-600">Privacy Policy</a>
+        <a href="#" class="hover:text-blue-600">Terms of Service</a>
+      </div>
+    </div>
+  </footer> -->
+  
+
+
+  <!-- <div class="main-header">
+    <div class="container mx-auto px-4 py-4 bg-blue-200 flex justify-between items-center">
+      <div class="text-2xl font-bold text-blue-600">PANKAJ</div>
+      <nav class="hidden md:flex space-x-8">
+        <a href="#" (click)="setActive('account')" class="text-gray-700 hover:text-blue-600">
+          Account List
+        </a>
+        <a href="#" (click)="setActive('create-account')" class="text-gray-700 hover:text-blue-600">
+          Create Account
+        </a>
+      </nav>
+    </div>
+  
+    <section class="py-4">
+      <h2 class="text-3xl font-bold text-center mb-8">BANKING APPLICATION</h2>
+  
+      <div *ngIf="activeSection === 'account'">
+        <account-list></account-list>
+      </div>
+  
+      <div *ngIf="activeSection === 'create-account'">
+        <app-create-account></app-create-account>
+      </div>
+    </section>
+  </div>
+  
+  <footer class="bg-gray-900 text-gray-200 py-8">
+    <div class="container mx-auto px-4 text-center">
+      <p class="mb-4">&copy; 2024 BankingPro. All rights reserved.</p>
+      <div class="space-x-4">
+        <a href="#" class="hover:text-blue-600">Privacy Policy</a>
+        <a href="#" class="hover:text-blue-600">Terms of Service</a>
+      </div>
+    </div>
+  </footer> -->
+  

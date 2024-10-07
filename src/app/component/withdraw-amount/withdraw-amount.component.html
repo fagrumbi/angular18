@@ -1,0 +1,52 @@
+
+<div class="bg-cover bg-center min-h-screen flex items-center px-6" style="background-image: url('../assets/rupey.jpg');">
+    <div class="max-w-lg w-full p-6 bg-white shadow-lg rounded-lg mr-10">
+        <h2 class="text-2xl text-center font-bold mb-4 uppercase">WithDraw <span class="text-green-600">Amount</span></h2>
+        <div class="inline">
+            <p class="inline text-sm ">
+              Account Holder Name : 
+              <span class="uppercase font-bold">{{accounts.accountholdername}}</span>
+            </p>
+          
+            <p class="inline ml-4">
+              Total Balance : 
+              <span class="font-bold">{{accounts.balance}}</span>
+            </p>
+          </div>
+        <div *ngIf="withdraw" class="bg-gray-200 p-4">
+            <p class="text-green-800 text-center"> &#8377; Amount Withdraw successfully!</p>
+        </div>
+        <div *ngIf="notValidAmount" class="bg-red-500 p-4">
+            <p class="text-white text-center"> &#8377; <span class="font-bold">{{accounts.balance}}</span> Invalid Amount!.. Enter valid amount..</p>
+        </div>
+        <form class="space-y-4 mt-4" (ngSubmit)="onSubmit(form)" #form="ngForm">
+            
+            <div>
+                <label for="balance" class="block text-sm font-medium text-gray-700">Balance</label>
+                <input
+                    type="text"
+                    id="balance"
+                    name="balance"
+                    placeholder="Enter Balance"
+                    [(ngModel)]="accounts.balance"
+                    required
+                    class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                />
+            </div>
+           
+            
+               <div>
+                <button
+                type="submit"
+                class="w-full py-2 px-4 bg-indigo-600 text-white font-medium rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                [disabled]="form.invalid"
+            >
+                SUBMIT
+            </button>
+               </div>
+                
+        </form>
+        <div ><button (click)="backRoute()" class=" w-full mt-3 py-2 px-4 bg-red-500 text-white font-medium rounded-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400">BACK</button></div>
+    </div>
+  </div>
+  

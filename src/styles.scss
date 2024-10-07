@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.main-header {
+    @apply bg-white shadow-lg h-auto space-y-4 md:px-12 p-4 sm:px-8 sm:py-6 lg:p-12 xl:px-8 xl:py-6 lg:mx-[70px];
+}

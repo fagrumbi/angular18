@@ -1,0 +1,105 @@
+<app-header></app-header>
+
+<h1 class="text-center text-xl font-semibold">Account All List</h1>
+
+<div class="container mx-auto px-4">
+  <!-- Table Header -->
+  <div class="flex justify-between items-center py-2">
+    <input
+      type="text"
+      placeholder="Search..."
+      class="border border-gray-300 rounded p-2"
+      (input)="onSearch($event)"
+    />
+  </div>
+
+  <!-- Table -->
+  <div class="overflow-x-auto">
+    <table class="min-w-full divide-y divide-gray-200 text-sm">
+      <thead class="bg-gray-100">
+        <tr>
+          <th scope="col" class="px-6 py-3 text-left font-medium text-gray-500">
+            ID
+          </th>
+          <th scope="col" class="px-6 py-3 text-left font-medium text-gray-500">
+            ACCOUNT HOLDER NAME
+          </th>
+          <th scope="col" class="px-6 py-3 text-left font-medium text-gray-500">
+            BALANCE
+          </th>
+          <th scope="col" class="px-6 py-3 text-left font-medium text-gray-500">
+            CREATED BY
+          </th>
+          <th scope="col" class="px-6 py-3 text-left font-medium text-gray-500">
+            CREATED ON
+          </th>
+          <th scope="col" class="px-6 py-3 text-left font-medium text-gray-500">
+            ACTION
+          </th>
+        </tr>
+      </thead>
+      <tbody class="bg-white divide-y divide-gray-200">
+        <tr *ngFor="let account of accounts; let i = index">
+          <td class="px-6 py-4 whitespace-nowrap">{{ account.id }}</td>
+          <td class="px-6 py-4 whitespace-nowrap">
+            {{ account.accountholdername }}
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap">{{ account.balance }}</td>
+          <td class="px-6 py-4 whitespace-nowrap">{{ account.createBy }}</td>
+          <td class="px-6 py-4 whitespace-nowrap">{{ account.createOn }}</td>
+          <td class="px-6 py-4 whitespace-nowrap">
+            <button
+              class="bg-blue-500 text-white font-bold py-2 px-4 mr-2 rounded"
+              (click)="deposite(account.id!)"
+            >
+              Deposite</button
+            ><button
+              class="bg-green-500 text-white font-bold py-2 px-4 mr-2 rounded"
+              (click)="withdraw(account.id!)"
+            >
+              Withdraw
+            </button>
+            <button
+              class="bg-red-500 text-white font-bold py-2 px-4 mr-2 rounded"
+              (click)="deleteAcount(account.id!)"
+            >
+              Delete
+            </button>
+            <button
+              class="bg-red-500 text-white font-bold py-2 px-4  rounded"
+              (click)="viewAllAccount(account.id!)"
+            >
+              VIEW
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="flex justify-between items-center py-4">
+    <div class="text-sm text-gray-500">
+      Showing {{ (currentPage - 1) * itemsPerPage + 1 }} to
+      <!-- {{ Math.min(currentPage * itemsPerPage, totalResults) }} of {{ totalResults }} results -->
+    </div>
+    <div class="flex items-center space-x-2">
+      <button
+        class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300"
+        (click)="prevPage()"
+        [disabled]="currentPage === 1"
+      >
+        Previous
+      </button>
+      <span>{{ currentPage }} / {{ totalPages }}</span>
+      <button
+        class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300"
+        (click)="nextPage()"
+        [disabled]="currentPage === totalPages"
+      >
+        Next
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- </div> -->
